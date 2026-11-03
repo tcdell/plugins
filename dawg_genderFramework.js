@@ -54,6 +54,7 @@ function ref(character) {
 //Function to generate a new character and use their information for different purposes; you could generate a character and then assign the values from this function to an actor in the database!
 function newCharacter() {
   const gender = genders[Math.floor(Math.random() * genders.length)];
+  const names = gender.nameList;
   const name = names[Math.floor(Math.random() * names.length)];
   return {name:name,gender:gender};
 }
@@ -80,3 +81,5 @@ function actorDialogueMV(character,bgType,posType,text) {
 	$gameMessage.add(text);
 	$gameMap._interpreter.setWaitMode('message');
 }
+
+//Will add another function for events a little later.
